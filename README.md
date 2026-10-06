@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/electerious/rosid-handler-css/actions/workflows/test.yml/badge.svg)](https://github.com/electerious/rosid-handler-css/actions/workflows/test.yml)
 
-A function that loads a CSS file, transforms nested CSS, adds vendor prefixes, and minifies the output.
+A function that loads a CSS file, inlines local CSS imports, transforms nested CSS, adds vendor prefixes, and minifies the output.
 
 ## Install
 
@@ -41,7 +41,7 @@ Add the following object to your `rosidfile.json`, `rosidfile.js` or [routes arr
 }
 ```
 
-The handler transforms nested CSS, adds vendor prefixes, and minifies CSS. Set `optimize` to `true` to disable source maps.
+The handler inlines local CSS imports, transforms nested CSS, adds vendor prefixes, and minifies CSS. Set `optimize` to `true` to disable source maps.
 
 ## Parameters
 

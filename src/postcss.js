@@ -1,5 +1,6 @@
 const postcss = require('postcss')
-const nesting = require('postcss-nesting')
+const postcssImport = require('postcss-import')
+const postcssNesting = require('postcss-nesting')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 
@@ -16,11 +17,14 @@ module.exports = async function (filePath, string, options) {
   // Dismiss sourceMap when output should be optimized
   const sourceMap = options.optimize !== true
 
-  const result = await postcss([nesting(), autoprefixer({ remove: false }), cssnano()]).process(string, {
-    from: filePath,
-    to: filePath,
-    map: sourceMap,
-  })
+  const result = await postcss([postcssImport(), postcssNesting(), autoprefixer({ remove: false }), cssnano()]).process(
+    string,
+    {
+      from: filePath,
+      to: filePath,
+      map: sourceMap,
+    },
+  )
 
   return result.css
 }

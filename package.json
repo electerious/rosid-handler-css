@@ -1,13 +1,14 @@
 {
   "name": "rosid-handler-css",
   "version": "1.0.1",
-  "description": "Transform nested CSS, add vendor prefixes, and minify CSS",
+  "description": "Loads CSS, resolves imports, transforms nesting, adds vendor prefixes, and minifies CSS",
   "keywords": [
     "rosid",
     "handler",
     "transform",
     "css",
     "postcss",
+    "postcss-import",
     "postcss-nesting",
     "autoprefixer",
     "cssnano"
@@ -33,6 +34,7 @@
     "autoprefixer": "^10.6.1",
     "cssnano": "^9.3.2",
     "postcss": "^8.5.29",
+    "postcss-import": "^17.0.0",
     "postcss-nesting": "^14.0.3"
   },
   "devDependencies": {

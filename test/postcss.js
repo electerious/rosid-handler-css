@@ -51,6 +51,28 @@ describe('postcss()', function () {
     assert.match(result, /\.parent \.child\{color:red\}/)
   })
 
+  it('should inline imported CSS', async function () {
+    const fileName = randomUUID()
+    const importedFileName = `${fileName}-imported.css`
+    const structure = await fsify([
+      {
+        type: FILE,
+        name: `${fileName}.css`,
+        contents: `@import "./${importedFileName}"; .main { color: black; }`,
+      },
+      {
+        type: FILE,
+        name: importedFileName,
+        contents: '.imported { color: red; }',
+      },
+    ])
+
+    const result = await postcss(structure[0].name, structure[0].contents, { optimize: true })
+
+    assert.match(result, /\.imported\{color:red\}/)
+    assert.match(result, /\.main\{color:#000\}/)
+  })
+
   it('should return CSS without a source map when optimization is enabled', async function () {
     const structure = await fsify([
       {
