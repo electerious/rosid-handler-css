@@ -1,0 +1,51 @@
+{
+  "name": "rosid-handler-css",
+  "version": "1.0.0",
+  "description": "Transform nested CSS, add vendor prefixes, and minify CSS",
+  "keywords": [
+    "rosid",
+    "handler",
+    "transform",
+    "css",
+    "postcss",
+    "postcss-nesting",
+    "autoprefixer",
+    "cssnano"
+  ],
+  "homepage": "https://github.com/electerious/rosid-handler-css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electerious/rosid-handler-css.git"
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "eslint": "eslint \"**/*.js\"",
+    "format": "npm run eslint -- --fix && npm run prettier -- --write",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,md,yml}\"",
+    "test": "npm run lint && node --test"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.6.1",
+    "cssnano": "^9.3.2",
+    "postcss": "^8.5.29",
+    "postcss-nesting": "^14.0.3"
+  },
+  "devDependencies": {
+    "@electerious/eslint-config": "^6.0.0",
+    "@electerious/prettier-config": "^5.0.0",
+    "eslint": "^10.12.0",
+    "fsify": "^7.0.1",
+    "prettier": "^3.9.9"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "authors": [
+    "Tobias Reich <tobias@electerious.com>"
+  ]
+}
