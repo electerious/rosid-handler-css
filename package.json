@@ -1,6 +1,6 @@
 {
   "name": "rosid-handler-css",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Loads CSS, resolves imports, transforms nesting, adds vendor prefixes, and minifies CSS",
   "keywords": [
     "rosid",
