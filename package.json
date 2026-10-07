@@ -9,7 +9,7 @@
     "css",
     "postcss",
     "postcss-import",
-    "postcss-nesting",
+    "postcss-nested",
     "autoprefixer",
     "cssnano"
   ],
@@ -35,7 +35,7 @@
     "cssnano": "^9.3.2",
     "postcss": "^8.5.29",
     "postcss-import": "^17.0.0",
-    "postcss-nesting": "^14.0.3"
+    "postcss-nested": "^7.0.2"
   },
   "devDependencies": {
     "@electerious/eslint-config": "^6.0.0",
